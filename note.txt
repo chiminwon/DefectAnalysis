@@ -1,0 +1,12 @@
+#import data
+mongoimport -d gw_defect -c fuel_price --type json --file C:\Tools\workspace\webstorm\DefectAnalysis\data\data.json --jsonArray
+
+mongoimport -d gw_defect -c gw_snow_month --type json --file C:\Tools\workspace\webstorm\DefectAnalysis\data\SNOW_statistics.json --jsonArray
+
+mongoimport -d gw_defect -c gw_defect --type json --file C:\Tools\workspace\webstorm\DefectAnalysis\data\defect.json --jsonArray
+
+//calculate the defect number
+db.gw_snow_month.aggregate([{$group:{_id: "$incAssignee", defect_number : {$sum:1}}}])
+
+
+

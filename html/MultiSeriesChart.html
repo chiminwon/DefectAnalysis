@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My first chart using FusionCharts Suite XT</title>
+    <script type="text/javascript" src="http://static.fusioncharts.com/code/latest/fusioncharts.js"></script>
+    <script type="text/javascript" src="http://static.fusioncharts.com/code/latest/themes/fusioncharts.theme.fint.js?cacheBust=56"></script>
+    <script type="text/javascript">
+        FusionCharts.ready(function(){
+            var fusioncharts = new FusionCharts({
+                        type: 'mscolumn2d',
+                        renderAt: 'chart-container',
+                        width: '1000',
+                        height: '450',
+                        dataFormat: 'json',
+                        dataSource: {
+                            "chart": {
+                                "caption": "Comparison of Developer's Defect",
+                                "xAxisname": "Developer",
+                                "yAxisName": "Sum",
+                                "numberPrefix": "#",
+                                "plotFillAlpha": "80",
+
+                                //Cosmetics
+                                "paletteColors": "#0075c2,#1aaf5d,#ff6833",
+                                "baseFontColor": "#333333",
+                                "baseFont": "Helvetica Neue,Arial",
+                                "captionFontSize": "14",
+                                "subcaptionFontSize": "14",
+                                "subcaptionFontBold": "0",
+                                "showBorder": "0",
+                                "bgColor": "#ffffff",
+                                "showShadow": "0",
+                                "canvasBgColor": "#ffffff",
+                                "canvasBorderAlpha": "0",
+                                "divlineAlpha": "100",
+                                "divlineColor": "#999999",
+                                "divlineThickness": "1",
+                                "divLineIsDashed": "1",
+                                "divLineDashLen": "1",
+                                "divLineGapLen": "1",
+                                "usePlotGradientColor": "0",
+                                "showplotborder": "0",
+                                "valueFontColor": "#ffffff",
+                                "placeValuesInside": "1",
+                                "showHoverEffect": "1",
+                                "rotateValues": "1",
+                                "showXAxisLine": "1",
+                                "xAxisLineThickness": "1",
+                                "xAxisLineColor": "#999999",
+                                "showAlternateHGridColor": "0",
+                                "legendBgAlpha": "0",
+                                "legendBorderAlpha": "0",
+                                "legendShadow": "0",
+                                "legendItemFontSize": "10",
+                                "legendItemFontColor": "#666666"
+                            },
+                            "categories": [{
+                                "category": [{
+                                    "label": "Ray Gao"
+                                }, {
+                                    "label": "Brigham Hu"
+                                }, {
+                                    "label": "Summy Xu"
+                                }, {
+                                    "label": "Allen Wan"
+                                }]
+                            }],
+                            "dataset": [{
+                                "seriesname": "On Hold",
+                                "data": [{
+                                    "value": "10"
+                                }, {
+                                    "value": "11"
+                                }, {
+                                    "value": "12"
+                                }, {
+                                    "value": "15"
+                                }]
+                            }, {
+                                "seriesname": "In Progress",
+                                "data": [{
+                                    "value": "25"
+                                }, {
+                                    "value": "29"
+                                }, {
+                                    "value": "21"
+                                }, {
+                                    "value": "26"
+                                }]
+                            }, {
+                                "seriesname": "Closed",
+                                "data": [{
+                                    "value": "35"
+                                }, {
+                                    "value": "39"
+                                }, {
+                                    "value": "31"
+                                }, {
+                                    "value": "36"
+                                }]
+                            }],
+                            "trendlines": [{
+                                "line": [{
+                                    "startvalue": "12",
+                                    "color": "#0075c2",
+                                    "displayvalue": "On Hold{br}Average",
+                                    "valueOnRight": "1",
+                                    "thickness": "1",
+                                    "showBelow": "1",
+                                    "tooltext": "On Hold quarterly target  : 13"
+                                }, {
+                                    "startvalue": "25",
+                                    "color": "#1aaf5d",
+                                    "displayvalue": "In Progress{br}Average",
+                                    "valueOnRight": "1",
+                                    "thickness": "1",
+                                    "showBelow": "1",
+                                    "tooltext": "In Progress quarterly target  : 23"
+                                }, {
+                                    "startvalue": "36.6",
+                                    "color": "#ff6833",
+                                    "displayvalue": "Closed{br}Average",
+                                    "valueOnRight": "1",
+                                    "thickness": "1",
+                                    "showBelow": "1",
+                                    "tooltext": "Closed quarterly target  : 33"
+                                }]
+                            }]
+                        }
+                    }
+            );
+            fusioncharts.render();
+        });
+    </script>
+</head>
+<body>
+<div id="chart-container">Chart will load here!</div>
+</body>
+</html>
